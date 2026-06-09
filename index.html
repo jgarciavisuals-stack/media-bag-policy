@@ -64,6 +64,12 @@
   .quick-nav a.aa { background: #CC2131; } .quick-nav a.dl { background: #003366; }
   .quick-nav a.ua { background: #0050A0; } .quick-nav a.b6 { background: #00244E; }
   .quick-nav a.wn { background: #E31837; } .quick-nav a.as { background: #01426A; }
+
+  .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .quick-nav a { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 10px; font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; flex-shrink: 0; }
+  .quick-nav a.aa { background: #CC2131; } .quick-nav a.dl { background: #003366; }
+  .quick-nav a.ua { background: #0050A0; } .quick-nav a.b6 { background: #00244E; }
+  .quick-nav a.wn { background: #E31837; } .quick-nav a.as { background: #01426A; }
   @media (max-width: 500px) { .detail-grid { grid-template-columns: 1fr; } .header-top { flex-direction: column; } }
 </style>
 </head>
@@ -81,7 +87,15 @@
     <a class="wn" href="#wn">WN</a>
     <a class="as" href="#as">AS</a>
   </div>
-<div class="summary-bar">
+  <div class="quick-nav">
+    <a class="aa" href="#aa">AA</a>
+    <a class="dl" href="#dl">DL</a>
+    <a class="ua" href="#ua">UA</a>
+    <a class="b6" href="#b6">B6</a>
+    <a class="wn" href="#wn">WN</a>
+    <a class="as" href="#as">AS</a>
+  </div>
+  <div class="summary-bar">
     <div class="stat"><div class="stat-label">Best rate</div><div class="stat-value">$50</div><div class="stat-sub">Delta / JetBlue / United</div></div>
     <div class="stat"><div class="stat-label">Max weight</div><div class="stat-value">99–100 lbs</div><div class="stat-sub">AA, DL, UA, B6</div></div>
     <div class="stat"><div class="stat-label">Max bags</div><div class="stat-value">25</div><div class="stat-sub">per org, per flight</div></div>
