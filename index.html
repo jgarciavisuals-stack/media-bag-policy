@@ -38,7 +38,7 @@
   .detail-value { font-size: 14px; color: #1a1a1a; font-weight: 500; }
   .quote-block { background: #f8f7f4; border-left: 3px solid #ddd; border-radius: 0 6px 6px 0; padding: 12px 14px; margin-bottom: 10px; }
   .quote-block.featured-quote { border-left-color: #185FA5; background: #f0f6fc; }
-  .quote-text { font-size: 13px; color: #333; line-height: 1.6; font-style: italic; margin-bottom: 6px; }
+  .quote-text { font-size: 15px; color: #222; line-height: 1.65; margin-bottom: 6px; }
   .quote-source { font-size: 11px; color: #888; }
   .quote-source a { color: #185FA5; text-decoration: none; }
   .credentials-block { background: #FAEEDA; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
@@ -58,6 +58,12 @@
   .dot { width: 6px; height: 6px; border-radius: 50%; background: #CC2131; margin-top: 7px; flex-shrink: 0; }
   .footer-note { font-size: 12px; color: #999; text-align: center; margin-top: 28px; line-height: 1.6; }
   .footer-note a { color: #185FA5; text-decoration: none; }
+
+  .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .quick-nav a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; flex-shrink: 0; }
+  .quick-nav a.aa { background: #CC2131; } .quick-nav a.dl { background: #003366; }
+  .quick-nav a.ua { background: #0050A0; } .quick-nav a.b6 { background: #00244E; }
+  .quick-nav a.wn { background: #E31837; } .quick-nav a.as { background: #01426A; }
   @media (max-width: 500px) { .detail-grid { grid-template-columns: 1fr; } .header-top { flex-direction: column; } }
 </style>
 </head>
@@ -67,13 +73,21 @@
     <div class="header-top"><div><div class="logo">jgarcia visuals</div><h1>US Airline Media Bag Policies</h1><div class="subtitle">Official quotes &amp; source links — for use at airport check-in</div></div></div>
     <div class="updated">Compiled June 2026 &nbsp;·&nbsp; Always verify with airline before travel &nbsp;·&nbsp; Policies subject to change</div>
   </div>
-  <div class="summary-bar">
+    <div class="quick-nav">
+    <a class="aa" href="#aa">AA</a>
+    <a class="dl" href="#dl">DL</a>
+    <a class="ua" href="#ua">UA</a>
+    <a class="b6" href="#b6">B6</a>
+    <a class="wn" href="#wn">WN</a>
+    <a class="as" href="#as">AS</a>
+  </div>
+<div class="summary-bar">
     <div class="stat"><div class="stat-label">Best rate</div><div class="stat-value">$50</div><div class="stat-sub">Delta / JetBlue / United</div></div>
     <div class="stat"><div class="stat-label">Max weight</div><div class="stat-value">99–100 lbs</div><div class="stat-sub">AA, DL, UA, B6</div></div>
     <div class="stat"><div class="stat-label">Max bags</div><div class="stat-value">25</div><div class="stat-sub">per org, per flight</div></div>
     <div class="stat"><div class="stat-label">Credentials required</div><div class="stat-value">Yes</div><div class="stat-sub">all airlines</div></div>
   </div>
-  <div class="airline-card featured">
+  <div class="airline-card" id="aa">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon aa">AA</div><div><div class="airline-name">American Airlines</div><div class="airline-sub">aa.com</div></div></div>
       <div class="badges"><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
@@ -97,7 +111,7 @@
       <div class="contact-row">Contact: <a href="mailto:entertainment.service@aa.com">entertainment.service@aa.com</a> / <a href="mailto:American.Support@aa.com">American.Support@aa.com</a></div>
     </div>
   </div>
-  <div class="airline-card">
+  <div class="airline-card" id="dl">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon dl">DL</div><div><div class="airline-name">Delta Air Lines</div><div class="airline-sub">delta.com</div></div></div>
       <div class="badges"><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
@@ -115,7 +129,7 @@
       <div class="contact-row">Contact: <a href="mailto:media.bags@delta.com">media.bags@delta.com</a> (24 hrs before departure)</div>
     </div>
   </div>
-  <div class="airline-card">
+  <div class="airline-card" id="ua">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon ua">UA</div><div><div class="airline-name">United Airlines</div><div class="airline-sub">united.com</div></div></div>
       <div class="badges"><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
@@ -133,7 +147,7 @@
       <div class="contact-row"><a href="https://united.business/entertainment" target="_blank">United Entertainment / Media page</a></div>
     </div>
   </div>
-  <div class="airline-card">
+  <div class="airline-card" id="b6">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon b6">B6</div><div><div class="airline-name">JetBlue</div><div class="airline-sub">jetblue.com</div></div></div>
       <div class="badges"><span class="badge badge-amber">Space-available only</span><span class="badge badge-amber">3 days advance required</span></div>
@@ -149,7 +163,7 @@
       <div class="contact-row">Contact to request form: <a href="mailto:corpcomm@jetblue.com">corpcomm@jetblue.com</a></div>
     </div>
   </div>
-  <div class="airline-card">
+  <div class="airline-card" id="wn">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon wn">WN</div><div><div class="airline-name">Southwest Airlines</div><div class="airline-sub">southwest.com</div></div></div>
       <div class="badges"><span class="badge badge-gray">Basic policy</span><span class="badge badge-gray">No formal program</span></div>
@@ -164,7 +178,7 @@
       <div class="quote-block"><div class="quote-text">"Camera, film, video, lighting, and sound equipment will be accepted when presented by a representative of a network or local television broadcasting company or a commercial filmmaking company. A fee of $75 will be charged for each item in excess of the free baggage allowance. Media equipment will not be assessed oversized or overweight charges."</div><div class="quote-source">Source: <a href="https://www.southwest.com/html/customer-service/travel-fees.html" target="_blank">southwest.com</a></div></div>
     </div>
   </div>
-  <div class="airline-card">
+  <div class="airline-card" id="as">
     <div class="airline-header">
       <div class="airline-name-row"><div class="airline-icon as">AS</div><div><div class="airline-name">Alaska Airlines</div><div class="airline-sub">alaskaair.com</div></div></div>
       <div class="badges"><span class="badge badge-red">No formal program</span><span class="badge badge-gray">Show media ID</span></div>
