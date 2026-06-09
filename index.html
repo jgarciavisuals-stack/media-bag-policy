@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Airline Media Bag Policies – jgarcia visuals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #1a1a1a; background: #f5f4f0; padding: 24px 16px 48px; }
+  .page { max-width: 720px; margin: 0 auto; }
+  .header { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; padding: 24px 28px 20px; margin-bottom: 20px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .logo { font-size: 13px; font-weight: 500; color: #888; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+  h1 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #666; }
+  .updated { font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid #eee; }
+  .summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .stat { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 14px 16px; text-align: center; }
+  .stat-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .stat-value { font-size: 20px; font-weight: 600; color: #1a1a1a; }
+  .stat-sub { font-size: 11px; color: #999; margin-top: 2px; }
+  .airline-card { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+  .airline-card.featured { border: 1.5px solid #185FA5; }
+  .airline-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 0.5px solid #eee; gap: 12px; flex-wrap: wrap; }
+  .airline-name-row { display: flex; align-items: center; gap: 10px; }
+  .airline-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .aa { background: #CC2131; } .dl { background: #003366; } .ua { background: #0050A0; } .b6 { background: #00244E; } .wn { background: #E31837; } .as { background: #01426A; }
+  .airline-name { font-size: 16px; font-weight: 600; color: #1a1a1a; } .airline-sub { font-size: 12px; color: #888; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+  .badge-green { background: #EAF3DE; color: #3B6D11; } .badge-blue { background: #E6F1FB; color: #185FA5; }
+  .badge-amber { background: #FAEEDA; color: #854F0B; } .badge-gray { background: #F1EFE8; color: #5F5E5A; }
+  .badge-red { background: #FCEBEB; color: #A32D2D; } .badge-featured { background: #E6F1FB; color: #0C447C; border: 0.5px solid #B5D4F4; }
+  .airline-body { padding: 16px 20px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-bottom: 16px; }
+  .detail-row { display: flex; flex-direction: column; }
+  .detail-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .detail-value { font-size: 14px; color: #1a1a1a; font-weight: 500; }
+  .quote-block { background: #f8f7f4; border-left: 3px solid #ddd; border-radius: 0 6px 6px 0; padding: 12px 14px; margin-bottom: 10px; }
+  .quote-block.featured-quote { border-left-color: #185FA5; background: #f0f6fc; }
+  .quote-text { font-size: 13px; color: #333; line-height: 1.6; font-style: italic; margin-bottom: 6px; }
+  .quote-source { font-size: 11px; color: #888; }
+  .quote-source a { color: #185FA5; text-decoration: none; }
+  .credentials-block { background: #FAEEDA; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+  .credentials-label { font-size: 11px; font-weight: 600; color: #854F0B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .credentials-text { font-size: 13px; color: #5a3a0a; line-height: 1.5; }
+  .contact-row { font-size: 12px; color: #666; margin-top: 8px; }
+  .contact-row a { color: #185FA5; text-decoration: none; }
+  .no-rate-banner { background: #f8f7f4; border: 0.5px solid #ddd; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #666; margin-bottom: 10px; }
+  .warning-block { background: #fff8e6; border: 0.5px solid #f0c060; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 13px; color: #6a4500; line-height: 1.5; }
+  .warning-block strong { font-weight: 600; }
+  .section-title { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .divider { height: 0.5px; background: #eee; margin: 14px 0; }
+  .battery-card { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+  .battery-card h2 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .battery-card .bc-sub { font-size: 12px; color: #888; margin-bottom: 14px; }
+  .battery-rule { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; font-size: 13px; line-height: 1.5; color: #333; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #CC2131; margin-top: 7px; flex-shrink: 0; }
+  .footer-note { font-size: 12px; color: #999; text-align: center; margin-top: 28px; line-height: 1.6; }
+  .footer-note a { color: #185FA5; text-decoration: none; }
+  @media (max-width: 500px) { .detail-grid { grid-template-columns: 1fr; } .header-top { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top"><div><div class="logo">jgarcia visuals</div><h1>US Airline Media Bag Policies</h1><div class="subtitle">Official quotes &amp; source links — for use at airport check-in</div></div></div>
+    <div class="updated">Compiled June 2026 &nbsp;·&nbsp; Always verify with airline before travel &nbsp;·&nbsp; Policies subject to change</div>
+  </div>
+  <div class="summary-bar">
+    <div class="stat"><div class="stat-label">Best rate</div><div class="stat-value">$50</div><div class="stat-sub">Delta / JetBlue / United</div></div>
+    <div class="stat"><div class="stat-label">Max weight</div><div class="stat-value">99–100 lbs</div><div class="stat-sub">AA, DL, UA, B6</div></div>
+    <div class="stat"><div class="stat-label">Max bags</div><div class="stat-value">25</div><div class="stat-sub">per org, per flight</div></div>
+    <div class="stat"><div class="stat-label">Credentials required</div><div class="stat-value">Yes</div><div class="stat-sub">all airlines</div></div>
+  </div>
+  <div class="airline-card featured">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon aa">AA</div><div><div class="airline-name">American Airlines</div><div class="airline-sub">aa.com</div></div></div>
+      <div class="badges"><span class="badge badge-featured">Flying this trip</span><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="detail-grid">
+        <div class="detail-row"><span class="detail-label">Domestic rate</span><span class="detail-value">$60 / piece, one-way</span></div>
+        <div class="detail-row"><span class="detail-label">International rate</span><span class="detail-value">$90 / piece, one-way</span></div>
+        <div class="detail-row"><span class="detail-label">Max weight</span><span class="detail-value">100 lbs (45 kg)</span></div>
+        <div class="detail-row"><span class="detail-label">Max size</span><span class="detail-value">115 linear in / 292 cm</span></div>
+        <div class="detail-row"><span class="detail-label">Max bags per org</span><span class="detail-value">25 per flight</span></div>
+        <div class="detail-row"><span class="detail-label">Oversize/overweight fees</span><span class="detail-value">Waived</span></div>
+      </div>
+      <div class="section-title">Official policy quotes</div>
+      <div class="quote-block featured-quote"><div class="quote-text">"Preferred entertainment and media companies and eligible travelers are offered a special rate and generous bag allowance for cameras, film, lighting, sound equipment, musical instruments and other bags. Eligible travelers will pay $60* per piece, per one-way domestic trip, or $90 per one-way international trip. Fees for overweight and oversize bags will be waived. Each eligible organization / company may travel with up to 25 pieces per flight."</div><div class="quote-source">Source: <a href="https://www.aa.com/i18n/travel-info/baggage/specialty-and-sports.jsp" target="_blank">aa.com</a></div></div>
+      <div class="quote-block"><div class="quote-text">"Media rates are effective for up to 25 checked pieces/bags total per flight. Applies to: Audio equipment, Camera equipment, Lighting equipment, Photography equipment, Wardrobes/trunks, Musical Instruments. Bags may not exceed 100 lbs / 45 kg or 115 in / 292 cm."</div><div class="quote-source">Source: <a href="https://saleslink.aa.com/en-US/resources/html/media-bags.html" target="_blank">saleslink.aa.com</a></div></div>
+      <div class="divider"></div>
+      <div class="credentials-block"><div class="credentials-label">Required credentials at check-in</div><div class="credentials-text">"You must present your company issued identification (ID) or business card and your government issued picture ID for travel to receive the media bag rate."</div></div>
+      <div class="section-title">Battery rules (AA-specific)</div>
+      <div class="quote-block"><div class="quote-text">"Lithium-ion batteries removed from all equipment in checked baggage and put into carry-on bag. Batteries must have electrical tape over contacts and be in individual plastic bags. Up to 8 batteries of 100Wh each without prior approval. Up to 2 batteries of 100-160Wh without prior approval. Higher quantities need approval: American.Support@aa.com, 7 days prior."</div><div class="quote-source">Source: <a href="https://saleslink.aa.com/en-US/resources/html/media-bags.html" target="_blank">saleslink.aa.com</a></div></div>
+      <div class="contact-row">Contact: <a href="mailto:entertainment.service@aa.com">entertainment.service@aa.com</a> / <a href="mailto:American.Support@aa.com">American.Support@aa.com</a></div>
+    </div>
+  </div>
+  <div class="airline-card">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon dl">DL</div><div><div class="airline-name">Delta Air Lines</div><div class="airline-sub">delta.com</div></div></div>
+      <div class="badges"><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="detail-grid">
+        <div class="detail-row"><span class="detail-label">Rate (all bags)</span><span class="detail-value">$50 / bag, one-way</span></div>
+        <div class="detail-row"><span class="detail-label">Max weight</span><span class="detail-value">99 lbs (incl. oversized)</span></div>
+        <div class="detail-row"><span class="detail-label">Max bags (mainline)</span><span class="detail-value">25 per flight</span></div>
+        <div class="detail-row"><span class="detail-label">Max bags (Delta Connection)</span><span class="detail-value">4 per flight</span></div>
+      </div>
+      <div class="quote-block"><div class="quote-text">"Camera, film, videotape, lighting, and sound equipment accepted when tendered by representatives of network or local television broadcasting companies or commercial filmmaking companies."</div><div class="quote-source">Source: <a href="https://www.delta.com/us/en/baggage/checked-baggage/excess-overweight-baggage" target="_blank">delta.com</a></div></div>
+      <div class="divider"></div>
+      <div class="credentials-block"><div class="credentials-label">Credentials &amp; advance submission</div><div class="credentials-text">"Submit media credentials by e-mailing media.bags@delta.com at least 24 hours prior to scheduled departure."</div></div>
+      <div class="contact-row">Contact: <a href="mailto:media.bags@delta.com">media.bags@delta.com</a> (24 hrs before departure)</div>
+    </div>
+  </div>
+  <div class="airline-card">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon ua">UA</div><div><div class="airline-name">United Airlines</div><div class="airline-sub">united.com</div></div></div>
+      <div class="badges"><span class="badge badge-green">Formal program</span><span class="badge badge-blue">Up to 25 bags</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="detail-grid">
+        <div class="detail-row"><span class="detail-label">Bags 1-2 (domestic)</span><span class="detail-value">Standard rate</span></div>
+        <div class="detail-row"><span class="detail-label">Bags 3-25 (domestic)</span><span class="detail-value">$70 / piece, one-way</span></div>
+        <div class="detail-row"><span class="detail-label">Bags 3-25 (international)</span><span class="detail-value">$70+ / piece</span></div>
+        <div class="detail-row"><span class="detail-label">Max bags</span><span class="detail-value">25 per flight</span></div>
+      </div>
+      <div class="quote-block"><div class="quote-text">"United's Media bag program gets valued equipment exactly where it needs to be. Representatives from network television, broadcasting and commercial filmmaking companies receive a flat service charge to check camera, film, lighting and sound equipment."</div><div class="quote-source">Source: <a href="https://united.business/entertainment" target="_blank">united.business/entertainment</a></div></div>
+      <div class="divider"></div>
+      <div class="credentials-block"><div class="credentials-label">Required credentials at check-in</div><div class="credentials-text">"Media representatives should provide media credentials; company personnel identification; or clearly identified media equipment cases labeled with company identification."</div></div>
+      <div class="contact-row"><a href="https://united.business/entertainment" target="_blank">United Entertainment / Media page</a></div>
+    </div>
+  </div>
+  <div class="airline-card">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon b6">B6</div><div><div class="airline-name">JetBlue</div><div class="airline-sub">jetblue.com</div></div></div>
+      <div class="badges"><span class="badge badge-amber">Space-available only</span><span class="badge badge-amber">3 days advance required</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="detail-grid">
+        <div class="detail-row"><span class="detail-label">Rate (all bags)</span><span class="detail-value">$50 / bag, one-way</span></div>
+        <div class="detail-row"><span class="detail-label">Max weight</span><span class="detail-value">99 lbs (incl. oversized)</span></div>
+        <div class="detail-row"><span class="detail-label">Advance notice</span><span class="detail-value">3 working days minimum</span></div>
+        <div class="detail-row"><span class="detail-label">Codeshare flights</span><span class="detail-value">Not eligible</span></div>
+      </div>
+      <div class="quote-block"><div class="quote-text">"Valid photo ID with company insignia must be submitted to JetBlue along with the Media Bag Submission Request at least 3 working days prior to travel. Media bag customers will pay $50 per bag starting with the first checked bag up to 99 pounds, including oversized."</div><div class="quote-source">Source: NBCUniversal Travel</div></div>
+      <div class="contact-row">Contact to request form: <a href="mailto:corpcomm@jetblue.com">corpcomm@jetblue.com</a></div>
+    </div>
+  </div>
+  <div class="airline-card">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon wn">WN</div><div><div class="airline-name">Southwest Airlines</div><div class="airline-sub">southwest.com</div></div></div>
+      <div class="badges"><span class="badge badge-gray">Basic policy</span><span class="badge badge-gray">No formal program</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="detail-grid">
+        <div class="detail-row"><span class="detail-label">Excess bag rate (media)</span><span class="detail-value">$75 / piece</span></div>
+        <div class="detail-row"><span class="detail-label">Oversize/overweight fees</span><span class="detail-value">Waived for media gear</span></div>
+        <div class="detail-row"><span class="detail-label">Advance submission</span><span class="detail-value">None required</span></div>
+        <div class="detail-row"><span class="detail-label">Max bags total</span><span class="detail-value">20 per customer</span></div>
+      </div>
+      <div class="quote-block"><div class="quote-text">"Camera, film, video, lighting, and sound equipment will be accepted when presented by a representative of a network or local television broadcasting company or a commercial filmmaking company. A fee of $75 will be charged for each item in excess of the free baggage allowance. Media equipment will not be assessed oversized or overweight charges."</div><div class="quote-source">Source: <a href="https://www.southwest.com/html/customer-service/travel-fees.html" target="_blank">southwest.com</a></div></div>
+    </div>
+  </div>
+  <div class="airline-card">
+    <div class="airline-header">
+      <div class="airline-name-row"><div class="airline-icon as">AS</div><div><div class="airline-name">Alaska Airlines</div><div class="airline-sub">alaskaair.com</div></div></div>
+      <div class="badges"><span class="badge badge-red">No formal program</span><span class="badge badge-gray">Show media ID</span></div>
+    </div>
+    <div class="airline-body">
+      <div class="no-rate-banner">Alaska Airlines does not have a dedicated media bag rate program. Show a media ID at check-in; standard excess bag fees apply. Bags 1-2: $25 each (under 50 lbs / 62 linear inches); 51-100 lbs or 63-115 inches: $75; bags 3+: $50 each.</div>
+      <div class="contact-row"><a href="https://www.alaskaair.com/content/travel-info/baggage/overview" target="_blank">Alaska Airlines baggage overview</a></div>
+    </div>
+  </div>
+  <div class="battery-card">
+    <h2>Universal battery rules (all airlines, FAA-mandated)</h2>
+    <div class="bc-sub">These apply regardless of airline</div>
+    <div class="battery-rule"><div class="dot"></div><span><strong>Spare lithium batteries must travel in carry-on only</strong> - never in checked gear.</span></div>
+    <div class="battery-rule"><div class="dot"></div><span><strong>Devices with batteries installed</strong> (cameras, laptops, phones) allowed in both carry-on and checked baggage.</span></div>
+    <div class="battery-rule"><div class="dot"></div><span><strong>If carry-on gets gate-checked</strong>, FAA rules require retrieval of loose power banks before door closes.</span></div>
+    <div class="battery-rule"><div class="dot"></div><span><strong>American Airlines specifically</strong> requires electrical tape over contacts and individual plastic bags for each battery.</span></div>
+  </div>
+  <div class="warning-block"><strong>Credential tip:</strong> Media credentials can be a company-issued ID, business card, or clearly labeled equipment cases. Best practice: bring a business card, have your LLC/company name on your cases, and be prepared to describe the production.</div>
+  <div class="footer-note">Compiled by jgarcia visuals &nbsp;·&nbsp; Verify all policies directly with each airline before travel</div>
+</div>
+</body>
+</html>
